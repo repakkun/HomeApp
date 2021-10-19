@@ -6,10 +6,11 @@ xmlns:local="clr-namespace:HomeApp.Pages" xmlns:local1="clr-namespace:HomeApp"
 >
 
     <StackLayout BackgroundColor="AliceBlue">
-        <Label Text="HomeApp - Климат вашего дома" HorizontalOptions="Center"  FontSize="Title" Padding="30,10,30,10" />
+        
         <!--<AbsoluteLayout BackgroundColor ="AliceBlue"  x:Name="absLayout"></AbsoluteLayout>-->
         <RelativeLayout  BackgroundColor = "DarkGray" x:Name="relativeLayout">
-            <Button x:Name="climateButton" BorderColor="Black" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BorderWidth="2" Text="Get weather" Clicked="Button_Clicked" Focused="climateButton_Focused" CornerRadius="{local1:ButtonViewExtension ButtonStyle=SemiRound}"/>
+            <Label Text="HomeApp - Климат вашего дома" HorizontalOptions="Center"  FontSize="Title" Padding="30,10,30,10" />
+            <Button x:Name="climateButton" BorderColor="Black" TextColor="Black" Margin="100" HorizontalOptions="Center" VerticalOptions="Center" BorderWidth="2" Text="Get weather" Clicked="Button_Clicked" Focused="climateButton_Focused" CornerRadius="{local1:ButtonViewExtension ButtonStyle=SemiRound}"/>
         </RelativeLayout>
     </StackLayout>
 </ContentPage>

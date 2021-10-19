@@ -11,8 +11,6 @@ namespace HomeApp.Pages
         public ClimatePage()
         {
             InitializeComponent();
-            ScanOutside();
-            ScanInside();
         }
 
         /// <summary>
@@ -20,39 +18,33 @@ namespace HomeApp.Pages
         /// </summary>
         public void ScanOutside()
         {
-            absLayout.Children.Add(
-                // Создаем прямоугольник заданного цвета
-                new BoxView { Color = Color.LightBlue },
-                // Задаем его местоположение и размеры
-                new Rectangle(
-                    20, // X - координата начальной точки
-                    10, // Y - координата начальной точки
-                    100, // ширина прямоугольника
-                    70 // высота
-                )
-            );
+            relativeLayout.Children.Add(new BoxView
+            {
+                Color = Color.Chocolate
+            }, () => new Rectangle(100, 100, 250, 100));
 
-            absLayout.Children.Add(
+            relativeLayout.Children.Add(
                 new Label
                 {
                     Text = $"Outside",
                     VerticalTextAlignment = TextAlignment.Start,
                     HorizontalTextAlignment = TextAlignment.Center,
-                    FontSize = 13
-                },
-                new Rectangle(20, 17, 100, 70)
-            );
+                    FontSize = 13,
+                    TextColor = Color.Black
+                }, () => new Rectangle(100, 100, 250, 100));
 
-            absLayout.Children.Add(
+
+            relativeLayout.Children.Add(
                 new Label
                 {
                     Text = "- 15 °C",
                     VerticalTextAlignment = TextAlignment.Center,
                     HorizontalTextAlignment = TextAlignment.Center,
-                    FontSize = 20
+                    FontSize = 20,
+                    TextColor = Color.Black
+                    
                 },
-                new Rectangle(20, 15, 100, 70)
-            );
+                () => new Rectangle(100, 100, 250, 100));
         }
 
         /// <summary>
@@ -60,32 +52,44 @@ namespace HomeApp.Pages
         /// </summary>
         public void ScanInside()
         {
-            absLayout.Children.Add(
-                new BoxView { Color = Color.LightSalmon },
-                new Rectangle(130, 10, 100, 70)
-            );
+            relativeLayout.Children.Add(new BoxView
+            {
+                Color = Color.Yellow
+            }, () => new Rectangle(100, 200, 250, 100));
 
-            absLayout.Children.Add(
+            relativeLayout.Children.Add(
                 new Label
                 {
                     Text = $"Inside",
                     VerticalTextAlignment = TextAlignment.Start,
                     HorizontalTextAlignment = TextAlignment.Center,
-                    FontSize = 13
+                    FontSize = 13,
+                    TextColor = Color.Black
                 },
-                new Rectangle(130, 17, 100, 70)
-            );
+                () => new Rectangle(100, 200, 250, 100));
 
-            absLayout.Children.Add(
+            relativeLayout.Children.Add(
                 new Label
                 {
                     Text = "+ 24 °C",
                     VerticalTextAlignment = TextAlignment.Center,
                     HorizontalTextAlignment = TextAlignment.Center,
-                    FontSize = 20
+                    FontSize = 20,
+                    TextColor = Color.Black
                 },
-                new Rectangle(130, 15, 100, 70)
-            );
+                () => new Rectangle(100, 200, 250, 100));
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            ScanInside();
+            ScanOutside();
+            climateButton.IsEnabled = false;
+        }
+
+        private void climateButton_Focused(object sender, FocusEventArgs e)
+        {
+            
         }
     }
 }

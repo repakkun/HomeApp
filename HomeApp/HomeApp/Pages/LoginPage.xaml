@@ -4,9 +4,10 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 xmlns:local="clr-namespace:HomeApp"
 x:Class="HomeApp.Pages.LoginPage">
 
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="stackLayout">
+    <StackLayout VerticalOptions="Center"  HorizontalOptions="Center"  x:Name="stackLayout">
         <Label Text="HomeApp - Ваш умный дом" FontSize="Title" Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
         <Button x:Name="loginButton" Text="{x:Static local:Pages.LoginPage.BUTTON_TEXT}" Clicked="Login_Click" CornerRadius="{local:ButtonViewExtension ButtonStyle=SemiRound}"/>
-        <Label x:Name="infoMessage" FontSize="Small" TextColor="Red" Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        <Label x:Name="infoMessage" FontSize="Small" TextColor="Black"  Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        <Label x:Name="runningDevice" FontSize="15" Padding="30,10,30,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
     </StackLayout>
 </ContentPage>

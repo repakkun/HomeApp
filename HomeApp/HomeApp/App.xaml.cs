@@ -14,7 +14,8 @@ namespace HomeApp
             //MainPage = new ClimatePage();
             //MainPage = new PaddingPage();
             //MainPage = new NewDevicePage();
-            MainPage = new DeviceControlPage();
+            //MainPage = new DeviceControlPage();
+            MainPage = new AlarmPage();
         }
 
         protected override void OnStart()
